@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics Assignment</title>
+</head>
+<body>
+    <h1>Check the console for output</h1>
+    <script>
+
+        //1 variables and datatypes
+        let name="Kartik";//string
+        const age=20;//number
+        var isStudent=true;//Boolean
+        let address;//undefined
+        const experience= null;//null
+
+
+        console.log(typeof name);
+        console.log(typeof age);
+        console.log(typeof isStudent);
+        console.log(typeof address);
+        console.log(typeof experience);
+
+
+
+        
+        //2 hoisting demo
+        console.log(a);
+        var a=10;
+        //console.log(b);//uncomment to test error
+        let b=20;
+
+
+
+
+        //3 user greeting(conditionals)
+        let userName=prompt("Enter your name:");
+        let userAge=parseInt(prompt("Enter your age:"));
+
+        if(userAge < 18){
+            alert(`Hi ${userName}, you are a teen`);
+        }else if(userAge >=18 && userAge <= 60){
+            alert(`Welcome ${userName}, you are an adult `);
+        }else{
+            alert(`hello ${userName}, you are a senior citizen`);
+        }
+
+
+
+        //4 looping numbers 
+        console.log("For loop:");
+        for(let i=1;i<=10;i++){
+            console.log(i);
+        }
+
+        console.log("While loop:");
+        let j=2;
+        while(j<=20){
+            console.log(j);
+            j+=2;
+        }
+
+        console.log("Do... While Loop:");
+        let k=10;
+        do{
+            console.log(k);
+            k--;
+        }while(k>=1);
+
+
+
+        //5 functions 
+        
+        function add(a,b){
+            return a+b;
+        }
+        
+        const square= function(n){
+            return n*n;
+        }
+
+        const greet=(name)=>`Hello , ${name}!`;
+
+        console.log("Add Function");
+        console.log(add(5,3));
+        
+        console.log("Square Function")
+        console.log(square(4));
+        console.log(greet("Kartik"));
+
+
+
+
+        //6 callback practice
+        function processNumber(num,callback){
+            callback(num);
+        }
+
+        processNumber(5,function(n){
+            console.log("Double is ",n*2);
+        });
+
+
+        //Bonus :CALCULATOR
+        let num1=parseFloat(prompt("Entere First Number:"));
+        let num2=parseFloat(prompt("Enter Second Number:"));
+        let Operation=prompt("Enter Opertaion (add,subtract,multiply,divide:)").toLowerCase();
+
+
+        let result;
+
+        switch(Operation){
+            case "add":
+                result=num1+num2;
+                break;
+            case "subtract":
+                result=num1-num2;
+                break;
+            case "multiply": 
+                result=num1*num2;
+                break;
+            case "divide":
+                result=num2 !== 0 ? num1/num2 : "Cannot divide by zero";
+                break;
+            default:
+                result="Invalid operation!";
+        }
+
+
+        alert("Result:"+ result);
+
+    </script>
+    
+</body>
+</html>
